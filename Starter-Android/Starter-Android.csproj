@@ -3,7 +3,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProductVersion>10.0.0</ProductVersion>
+    <ProductVersion>8.0.30703</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>{A12987FB-B625-4502-9D11-89F5A29F7E51}</ProjectGuid>
     <ProjectTypeGuids>{EFBA0AD7-5A72-4C68-AF49-83D382785DCF};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
@@ -28,6 +28,7 @@
     <WarningLevel>4</WarningLevel>
     <AndroidLinkMode>None</AndroidLinkMode>
     <ConsolePause>false</ConsolePause>
+    <EmbedAssembliesIntoApk>True</EmbedAssembliesIntoApk>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>full</DebugType>
@@ -43,9 +44,6 @@
     <Reference Include="System.Xml" />
     <Reference Include="System.Core" />
     <Reference Include="Mono.Android" />
-    <Reference Include="ActionBarSherlock">
-      <HintPath>..\ext\Monoandroid\ActionBarSherlock.dll</HintPath>
-    </Reference>
     <Reference Include="Newtonsoft.Json">
       <HintPath>..\ext\Monoandroid\Newtonsoft.Json.dll</HintPath>
     </Reference>
@@ -76,19 +74,29 @@
     <Reference Include="Xamarin.Mobile">
       <HintPath>..\ext\Monoandroid\Xamarin.Mobile.dll</HintPath>
     </Reference>
-    <Reference Include="Mono.Android.Support.v4" />
-    <Reference Include="Mono.Android.Export" />
     <Reference Include="Akavache.Mobile">
       <HintPath>..\ext\Monoandroid\Akavache.Mobile.dll</HintPath>
-    </Reference>
-    <Reference Include="Akavache.Portable">
-      <HintPath>..\ext\Monoandroid\Akavache.Portable.dll</HintPath>
     </Reference>
     <Reference Include="Akavache.Sqlite3">
       <HintPath>..\ext\Monoandroid\Akavache.Sqlite3.dll</HintPath>
     </Reference>
     <Reference Include="Akavache">
       <HintPath>..\ext\Monoandroid\Akavache.dll</HintPath>
+    </Reference>
+    <Reference Include="Akavache.Http">
+      <HintPath>..\ext\Monoandroid\Akavache.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="ModernHttpClient.Android">
+      <HintPath>..\ext\Monoandroid\ModernHttpClient.Android.dll</HintPath>
+    </Reference>
+    <Reference Include="OkHttp">
+      <HintPath>..\ext\Monoandroid\OkHttp.dll</HintPath>
+    </Reference>
+    <Reference Include="Splat">
+      <HintPath>..\ext\Monoandroid\Splat.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.Android.Support.v13">
+      <HintPath>..\ext\Monoandroid\Xamarin.Android.Support.v13.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
@@ -108,12 +116,12 @@
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Novell\Novell.MonoDroid.CSharp.targets" />
   <ItemGroup>
-    <ProjectReference Include="..\Starter-Core\Starter-Core-Android.csproj">
-      <Project>{BD5211E4-6E61-413D-A872-681DAF322379}</Project>
-      <Name>Starter-Core-Android</Name>
-    </ProjectReference>
+    <Folder Include="Views\" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Views\" />
+    <ProjectReference Include="..\Starter-Core\Starter-Core.csproj">
+      <Project>{B33E3F76-66AF-4033-A600-584B7C62236E}</Project>
+      <Name>Starter-Core</Name>
+    </ProjectReference>
   </ItemGroup>
 </Project>

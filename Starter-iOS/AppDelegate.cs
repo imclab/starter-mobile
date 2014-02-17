@@ -5,6 +5,7 @@ using MonoTouch.Foundation;
 using MonoTouch.UIKit;
 using Starter.Views;
 using ReactiveUI;
+using Splat;
 
 namespace Starter
 {
@@ -32,12 +33,12 @@ namespace Starter
             // via Type.GetType, unlike every other platform (even 
             // Xamarin.Android). So, we've got to manually do what RxUI and 
             // Akavache would normally do for us
-            var r = RxApp.MutableResolver;
+			var r = Locator.CurrentMutable;
             (new ReactiveUI.Cocoa.Registrations()).Register((f,t) => r.Register(f, t));
             (new ReactiveUI.Mobile.Registrations()).Register((f,t) => r.Register(f, t));
-            (new Akavache.Registrations()).Register(r.Register);
-            (new Akavache.Mobile.Registrations()).Register(r.Register);
-            (new Akavache.Sqlite3.Registrations()).Register(r.Register);
+            (new Akavache.Registrations()).Register(r);
+            (new Akavache.Mobile.Registrations()).Register(r);
+            (new Akavache.Sqlite3.Registrations()).Register(r);
 
             window = new UIWindow(UIScreen.MainScreen.Bounds);
 

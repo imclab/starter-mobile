@@ -9,6 +9,8 @@ using ReactiveUI.Android;
 using ReactiveUI;
 using Starter.Core.ViewModels;
 using Akavache;
+using System.Reactive;
+using System.Reactive.Linq;
 
 namespace Starter.Views
 {
