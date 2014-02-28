@@ -560,5 +560,25 @@
             <returns>An object that, when disposed, reenables change
             notifications.</returns>
         </member>
+        <member name="P:ReactiveUI.Cocoa.ReactiveControl.Changing">
+            <summary>
+            Represents an Observable that fires *before* a property is about to
+            be changed.
+            </summary>
+        </member>
+        <member name="P:ReactiveUI.Cocoa.ReactiveControl.Changed">
+            <summary>
+            Represents an Observable that fires *after* a property has changed.
+            </summary>
+        </member>
+        <member name="M:ReactiveUI.Cocoa.ReactiveControl.SuppressChangeNotifications">
+            <summary>
+            When this method is called, an object will not fire change
+            notifications (neither traditional nor Observable notifications)
+            until the return value is disposed.
+            </summary>
+            <returns>An object that, when disposed, reenables change
+            notifications.</returns>
+        </member>
     </members>
 </doc>
